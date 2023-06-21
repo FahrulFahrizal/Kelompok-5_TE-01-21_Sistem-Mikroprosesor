@@ -66,7 +66,7 @@ void loop() { //fungsi perulangan
 
   delay(1000);
 
-if((ldr <= 110) && (range > 480)){ //kondisi ke-1
+if((ldr <= 110) && (range > 480)){ //kondisi ke-1 ketika cuaca cerah
   Serial.println("Terang dan Kering"); //menampilkan tulisan
     if(hold1 == false){ //menggerakan motor 
       jemur(); //masuk ke fungsi jemur
@@ -77,7 +77,7 @@ if((ldr <= 110) && (range > 480)){ //kondisi ke-1
     delay(1000); 
   }
 
-  else if ((ldr <= 110) && (range < 480)){ //kondisi ke-2
+  else if ((ldr <= 110) && (range < 480)){ //kondisi ke-2 ketika cuaca mendung
   Serial.println("Terang dan Basah"); //menampilkan tulisan
     if (hold2 == false && Stop == true) { //menggerakan motor dengan kondisi yang tertulis 
     kembali(); //masuk ke fungsi kembali
@@ -85,7 +85,7 @@ if((ldr <= 110) && (range > 480)){ //kondisi ke-1
     delay(1000);
   }
 
-  else if ((ldr > 110) && (range > 480)){ //kondisi ke-3
+  else if ((ldr > 110) && (range > 480)){ //kondisi ke-3 ketika cuaca berawan
   Serial.println("Gelap dan Kering"); //menampilkan tulisan
     if (hold2 == false && Stop == true) { //menggerakan motor dengan kondisi yang tertulis 
     kembali(); //mamsuk ke fungsi kembali 
@@ -93,7 +93,7 @@ if((ldr <= 110) && (range > 480)){ //kondisi ke-1
     delay(1000);
   }  
 
-  else if ((ldr > 110)&&(range < 480)){ //kondisi ke-4
+  else if ((ldr > 110)&&(range < 480)){ //kondisi ke-4 ketika cuaca hujan
     Serial.println("Gelap dan Basah"); //menampilkan tulisan
     if (hold2 == false && Stop == true) { //menggerakan motor dengan kondisi yang tertulis 
     kembali(); //masuk ke fungsi kembali 
