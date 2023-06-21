@@ -55,18 +55,18 @@ void berhenti() { //fungsi berhenti untuk menghentikan motor
   delay(1000);
 }
 
-void loop() {
+void loop() { //fungsi perulangan
   hujan = analogRead(A1); //membaca nilai sensor hujan 
-  int range = map(hujan, bawah, atas, 0, 520);
+  int range = map(hujan, bawah, atas, 0, 520); 
   ldr = analogRead(A2); //membaca nilai sensor hujan 
-  Serial.print("Sensor LDR: ");
+  Serial.print("Sensor LDR: "); //menampilkan nilai senso ldr
   Serial.println(ldr);
-  Serial.print("Sensor Hujan: ");
+  Serial.print("Sensor Hujan: "); //menampilkan nilai senso hujan
   Serial.println(range);
 
   delay(1000);
 
-if((ldr <= 110) && (range > 480)){
+if((ldr <= 110) && (range > 480)){ //kondisi ke-1
   Serial.println("Terang dan Kering");
     if(hold1 == false){
       jemur();
@@ -77,7 +77,7 @@ if((ldr <= 110) && (range > 480)){
     delay(1000);
   }
 
-  else if ((ldr <= 110) && (range < 480)){
+  else if ((ldr <= 110) && (range < 480)){ //kondisi ke-2
   Serial.println("Terang dan Basah");
     if (hold2 == false && Stop == true) {
     kembali();
@@ -85,7 +85,7 @@ if((ldr <= 110) && (range > 480)){
     delay(1000);
   }
 
-  else if ((ldr > 110) && (range > 480)){
+  else if ((ldr > 110) && (range > 480)){ //kondisi ke-3
   Serial.println("Gelap dan Kering");
     if (hold2 == false && Stop == true) {
     kembali();
@@ -93,7 +93,7 @@ if((ldr <= 110) && (range > 480)){
     delay(1000);
   }  
 
-  else if ((ldr > 110)&&(range < 480)){
+  else if ((ldr > 110)&&(range < 480)){ //kondisi ke-4
     Serial.println("Gelap dan Basah");
     if (hold2 == false && Stop == true) {
     kembali();
