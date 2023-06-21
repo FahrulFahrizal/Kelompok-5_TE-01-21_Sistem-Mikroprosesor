@@ -67,36 +67,36 @@ void loop() { //fungsi perulangan
   delay(1000);
 
 if((ldr <= 110) && (range > 480)){ //kondisi ke-1
-  Serial.println("Terang dan Kering");
-    if(hold1 == false){
-      jemur();
+  Serial.println("Terang dan Kering"); //menampilkan tulisan
+    if(hold1 == false){ //menggerakan motor 
+      jemur(); //masuk ke fungsi jemur
     }
-    else{if (hold1 == false && hold2 == true && Stop == true) {
-    jemur();
+    else{if (hold1 == false && hold2 == true && Stop == true) { //menggerakan motor dengan kondisi yang tertulis
+    jemur(); //masuk ke fungsi jemur 
     }}
-    delay(1000);
+    delay(1000); 
   }
 
   else if ((ldr <= 110) && (range < 480)){ //kondisi ke-2
-  Serial.println("Terang dan Basah");
-    if (hold2 == false && Stop == true) {
-    kembali();
+  Serial.println("Terang dan Basah"); //menampilkan tulisan
+    if (hold2 == false && Stop == true) { //menggerakan motor dengan kondisi yang tertulis 
+    kembali(); //masuk ke fungsi kembali
     }
     delay(1000);
   }
 
   else if ((ldr > 110) && (range > 480)){ //kondisi ke-3
-  Serial.println("Gelap dan Kering");
-    if (hold2 == false && Stop == true) {
-    kembali();
+  Serial.println("Gelap dan Kering"); //menampilkan tulisan
+    if (hold2 == false && Stop == true) { //menggerakan motor dengan kondisi yang tertulis 
+    kembali(); //mamsuk ke fungsi kembali 
     }
     delay(1000);
   }  
 
   else if ((ldr > 110)&&(range < 480)){ //kondisi ke-4
-    Serial.println("Gelap dan Basah");
-    if (hold2 == false && Stop == true) {
-    kembali();
+    Serial.println("Gelap dan Basah"); //menampilkan tulisan
+    if (hold2 == false && Stop == true) { //menggerakan motor dengan kondisi yang tertulis 
+    kembali(); //masuk ke fungsi kembali 
     }
 
   } delay(1000);
